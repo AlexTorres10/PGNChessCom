@@ -1,7 +1,7 @@
 # PGNChessCom
 Um bot que baixa as suas partidas do chess.com. Muito bom para a comunidade enxadrística do site, que agora terá menos trabalho para baixar suas partidas e poder analisá-las propriamente.
 
-O projeto foi testado no Linux e no Windows. Talvez deva funcionar no MacOS.
+O projeto foi testado no Linux e no Windows. Talvez deva funcionar no MacOS com os comandos do Linux.
 
 Ingredientes:
 * [Python3](https://www.python.org/)   
@@ -9,8 +9,8 @@ Ingredientes:
 sudo apt-get install python3
 ```
 Esse comando é para Linux, mas pelo menos no Ubuntu, o Python já vem instalado.
-Se estiver no Windows, baixe o instalador do Python no próprio site.
-* [Selenium](https://www.seleniumhq.org/) para simular a navegação 
+Se estiver no Windows, baixe o instalador do Python no próprio site. Entre, clique na aba Download, escolha seu sabor e sirva-se.
+* [Selenium](https://www.seleniumhq.org/) para navegação automatizada.
 ```
 pip install selenium
 ```
