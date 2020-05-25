@@ -38,5 +38,8 @@ sudo mv geckodriver /usr/local/bin/
 ## Mexendo no código
 Agora vai no código, linha 7 e 8, coloque seu login e senha, e veja a festa acontecer. Aos leigos, não tenham medo, o código não guarda nenhum dado seu.
 
+## Notas sobre o código
+Nos testes de estresse, o site do chess.com permite navegar até a página 101. A partir da página 102, ele volta a mostrar a página 100. É coisa do próprio site.
+
 # Contato
-Se você quer contribuir com o código de alguma forma, quer tirar dúvidas, experienciou algum problema e quer ajuda, se me achou feio, se me achou bonito, entre em contato com meu [Twitter](https://twitter.com/AlexTowerss10)
+Se você quer contribuir com o código de alguma forma, quer tirar dúvidas, experienciou algum problema e quer ajuda, se me achou feio, se me achou bonito, entre em contato comigo através do meu [Twitter](https://twitter.com/AlexTowerss10).
