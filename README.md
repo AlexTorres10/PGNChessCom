@@ -35,8 +35,10 @@ sudo mv geckodriver /usr/local/bin/
 6. Digite "C:\geckodriver.exe" (é o endereço onde você colocou o arquivo)
 7. Dê o enter, e aperte os OKs.
 
-## Mexendo no código
-Agora vai no código, linha 7 e 8, coloque seu login e senha, e veja a festa acontecer. Aos leigos, não tenham medo, o código não guarda nenhum dado seu.
+## Executando o código
+No código, altere a variável **nick** e coloque seu nome de usuário, aproveite e coloque quantos jogos vai baixar. Recomendo ver no chess.com quantas partidas você tem para não dar margem a erros.
+
+Feito isso, execute o script, vá comer um sanduíche enquanto o bot vai baixando as partidas. Quando ele terminar, os PGNs estão todos baixados. Se quiser juntar todos num PGN só, dá pra fazer isso no ChessBase, por exemplo.
 
 ## Notas sobre o código
 Nos testes de estresse, o site do chess.com permite navegar até a página 101. A partir da página 102, ele volta a mostrar a página 100. É coisa do próprio site.
