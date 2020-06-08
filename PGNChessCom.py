@@ -3,14 +3,9 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 import time, math, pyautogui as gui
 
-
-login = ""
-password = ""
-
-loginUrl = "https://www.chess.com/login_and_go?returnUrl=https%3A%2F%2Fwww.chess.com%2F"
-# Esteja já logado no site
-#gameurl = "https://www.chess.com/games/archive?gameOwner=my_game&gameType=live&gameTypeslive%5B%5D=blitz&gameTypeslive%5B%5D=rapid&timeSort=desc"
-gameurl = "https://www.chess.com/games/archive/tpros?show=live_blitz&gameType=live_blitz&rated=rated"
+nick = "" # Seu nick no chess.com
+# Essa gameurl baixa os seus jogos Blitz e Rapid. Não inclui Bullet, nem Xadrez 960, Crazyhouse, essas coisas...
+gameurl = "https://www.chess.com/games/archive/" + nick +"?gameOwner=other_game&gameType=live&gameTypeslive%5B%5D=blitz&gameTypeslive%5B%5D=rapid&rated=rated&timeSort=desc"
 # Diga quantos jogos quer baixar
 games = 0
 # Que eu converto para quantas páginas vai precisar
@@ -26,7 +21,7 @@ isChrome = True
 # Deixe como False se estiver com Windows
 isLinux = False
 
-if (not(login == '' or password == '' or games == 0)):
+if (not(games == 0 or nick == '')):
     try:
         caps = DesiredCapabilities().CHROME.copy()
         caps["pageLoadStrategy"] = "eager" # interactive
@@ -42,22 +37,21 @@ if (not(login == '' or password == '' or games == 0)):
             executable_path="C:\\chromedriver.exe")
         
     except:
-        isChrome = False
-        caps = DesiredCapabilities().FIREFOX.copy()
-        caps["pageLoadStrategy"] = "eager"
-        bp = webdriver.FirefoxProfile()
-        bp.set_preference("dom.webnotifications.enabled", False)
-        if (isLinux):
-            browser = webdriver.Firefox(capabilities=caps, firefox_profile=bp)
-        else:
-            browser = webdriver.Firefox(capabilities=caps, firefox_profile=bp, 
-                executable_path=r'C:\\geckodriver.exe')
-        # Da mesma forma, coloque o caminho do Geckodriver.
+        try:
+            isChrome = False
+            caps = DesiredCapabilities().FIREFOX.copy()
+            caps["pageLoadStrategy"] = "eager"
+            bp = webdriver.FirefoxProfile()
+            bp.set_preference("dom.webnotifications.enabled", False)
+            if (isLinux):
+                browser = webdriver.Firefox(capabilities=caps, firefox_profile=bp)
+            else:
+                browser = webdriver.Firefox(capabilities=caps, firefox_profile=bp, 
+                    executable_path=r'C:\\geckodriver.exe')
+            # Da mesma forma, coloque o caminho do Geckodriver.
+        except:
+            print("Tanto Chrome quanto Firefox deram problema.")
 
-    browser.get(loginUrl)
-    browser.find_element_by_id('username').send_keys(login)
-    browser.find_element_by_id('password').send_keys(password)
-    browser.find_element_by_id('login').click()
 
     for i in range(1,pages+1):
         url = gameurl + "&page=" + str(i)
@@ -71,4 +65,4 @@ if (not(login == '' or password == '' or games == 0)):
                 gui.press('down')
             gui.press('enter')
 else:
-    print("Estão faltando dados ou você não especificou quantos jogos vai baixar.")
+    print("Faltou especificar seu nick ou especificou quantos jogos vai baixar.")
