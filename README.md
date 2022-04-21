@@ -16,4 +16,4 @@ O código não usa mais o Selenium, nem Geckodriver, já que a interação do si
 No código, ao executar, ele já pedirá o nick do jogador no chess.com, e ele irá baixando os jogos (organizados em cada mês num JSON). No final, sairá um PGN com todos os jogos juntos, sem necessidade de juntar num ChessBase da vida.
 
 # Contato
-Se você quer contribuir com o código de alguma forma, quer tirar dúvidas, experienciou algum problema e quer ajuda, se me achou feio, se me achou bonito, entre em contato comigo através do meu [E-mail](mailto:alextcarvalho98@gmail.com?subject=Código da PGN do Chess.com").
+Se você quer contribuir com o código de alguma forma, quer tirar dúvidas, experienciou algum problema e quer ajuda, se me achou feio, se me achou bonito, entre em contato comigo através do meu [E-mail](mailto:alextcarvalho98@gmail.com).
